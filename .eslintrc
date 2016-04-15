@@ -1,14 +1,18 @@
 {
   "env": {
-    "node": true
+    "node": true,
+    "es6": true
   },
   ecmaFeatures: {
-    jsx: true
+    "jsx": true,
+    "modules": true,
+    "destructuring": true
   },
   "globals": {
   },
   "plugins": [
   ],
+  "parser": "babel-eslint",
   "extends": "eslint-config-airbnb",
   "rules": {
     "comma-dangle": 0,
