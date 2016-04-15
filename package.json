@@ -1,7 +1,7 @@
 {
   "name": "react-babel-webpack-boilerplate",
   "version": "1.1.0",
-  "description": "",
+  "description": "react, babel, webpack, redux, react-router, meterial",
   "main": "app/main.jsx",
   "scripts": {
     "lint": "eslint 'app/**/*.@(js|jsx)'",
