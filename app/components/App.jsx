@@ -24,11 +24,13 @@ export default class App extends React.Component {
   }
 
   render() {
+    const props = {...this.props};
+
     return (
       <div>
         <Header />
         <div>
-          <h1>Hello World</h1>
+          <h1>Appname: {props.name} <small>- version: {props.version}</small></h1>
           <Button value="Button1" onClick={this.handleClick1} /> <Button value="Button2" onClick={this.handleClick2} />
         </div>
         <Footer />
