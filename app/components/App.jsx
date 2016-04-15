@@ -33,6 +33,11 @@ export default class App extends React.Component {
           <h1>Appname: {props.name} <small>- version: {props.version}</small></h1>
           <Button value="Button1" onClick={this.handleClick1} /> <Button value="Button2" onClick={this.handleClick2} />
         </div>
+
+        <div className="route">
+          <h2> Route Area </h2>
+          {this.props.children}
+        </div>
         <Footer />
       </div>
     );
