@@ -4,6 +4,8 @@ import { Button } from './ui';
 import Header from './Header';
 import Footer from './Footer';
 
+import '../assets/less/main.less';
+
 require('./App.css');
 require('./Header.css');
 require('./Footer.css');
@@ -41,7 +43,7 @@ export default class App extends React.Component {
     return (
       <div>
         <Header />
-        <div>
+        <div className="box">
           <h1>Appname: {props.name} <small>- version: {props.version}</small></h1>
           <div>Total User Count: {this.state.totalUserCount}</div>
           <Button value="Button1" onClick={this.handleClick1} /> <Button value="Button2" onClick={this.handleClick2} />
