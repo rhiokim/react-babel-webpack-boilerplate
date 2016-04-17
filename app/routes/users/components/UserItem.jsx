@@ -6,12 +6,10 @@ export default class UserItem extends Component {
   }
 
   render() {
-    const { name, age } = this.props;
+    const { name, email } = this.props;
 
     return (
-      <div className="userItem">
-        {name}: {age}
-      </div>
+      <li>{name}: {email}</li>
     );
   }
 }
