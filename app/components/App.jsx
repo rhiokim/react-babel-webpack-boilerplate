@@ -1,4 +1,5 @@
 import React from 'react';
+import store from 'store';
 import { Button } from './ui';
 import Header from './Header';
 import Footer from './Footer';
@@ -13,6 +14,17 @@ export default class App extends React.Component {
 
     this.handleClick1.bind(this);
     this.handleClick2.bind(this);
+
+    this.state = {
+      totalUserCount: 0
+    };
+  }
+
+  componentWillMount() {
+    store.subscribe(() => {
+      const currStore = store.getState();
+      this.setState({ totalUserCount: currStore.userReducer.users.length });
+    });
   }
 
   handleClick1() {
@@ -31,6 +43,7 @@ export default class App extends React.Component {
         <Header />
         <div>
           <h1>Appname: {props.name} <small>- version: {props.version}</small></h1>
+          <div>Total User Count: {this.state.totalUserCount}</div>
           <Button value="Button1" onClick={this.handleClick1} /> <Button value="Button2" onClick={this.handleClick2} />
         </div>
 
