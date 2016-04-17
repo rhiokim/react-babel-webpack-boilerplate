@@ -16,7 +16,7 @@ export default class Users extends Component {
         <ul>
           { users.map((user) => {
             return (
-              <UserItem key={user.id} {...user} />
+              <UserItem key={user.id} onClick={this.props.onClick} {...user} />
             );
           })}
         </ul>

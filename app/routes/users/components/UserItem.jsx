@@ -9,7 +9,7 @@ export default class UserItem extends Component {
     const { name, email } = this.props;
 
     return (
-      <li>{name}: {email}</li>
+      <li onClick={this.props.onClick}>{name}: {email}</li>
     );
   }
 }

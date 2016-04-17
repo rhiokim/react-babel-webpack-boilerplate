@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Router, Route, browserHistory, IndexRoute } from 'react-router';
+import { Provider } from 'react-redux';
+import store from 'store';
 
 import App from 'components/App';
 import Index from 'routes/Index';
@@ -12,11 +14,13 @@ const config = {
 };
 
 ReactDOM.render(
-  <Router history={browserHistory}>
-    <Route path="/" component={App} {...config}>
-      <IndexRoute component={Index} />
-      <Route path="/users" component={UsersContainer} />
-    </Route>
-  </Router>,
+  <Provider store={store}>
+    <Router history={browserHistory}>
+      <Route path="/" component={App} {...config}>
+        <IndexRoute component={Index} />
+        <Route path="/users" component={UsersContainer} />
+      </Route>
+    </Router>
+  </Provider>,
   document.body.appendChild(document.createElement('div'))
 );
