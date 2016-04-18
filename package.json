@@ -14,7 +14,8 @@
     "commit": "git cz",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -w -r 0",
     "docker-build": "docker build --tag react-app .",
-    "docker-run": "docker run -d -p 80:80 -p 443:443 --name react-app react-app:latest"
+    "docker-run": "docker run -d -p 80:80 -p 443:443 --name react-app react-app:latest",
+    "docker-rm": "docker rm -f react-app"
   },
   "dependencies": {
     "axios": "^0.9.1",
