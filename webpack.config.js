@@ -14,7 +14,7 @@ module.exports = {
   entry: [
     'webpack/hot/dev-server',
     'webpack-dev-server/client?http://localhost:8080',
-    path.resolve(__dirname, 'app/boostrap.jsx')
+    path.resolve(__dirname, 'app/bootstrap.jsx')
   ],
   output: {
     path: __dirname + '/build',
