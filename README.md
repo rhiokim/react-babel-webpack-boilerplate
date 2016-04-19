@@ -40,7 +40,7 @@ $ npm run deploy
 
 ```bash
 $ npm run docker-build
-$ npm run dokcer-run
+$ npm run docker-run
 ```
 
 You should see a new browser tap opening and a title of "Hello World" in http://127.0.0.1:8080.
