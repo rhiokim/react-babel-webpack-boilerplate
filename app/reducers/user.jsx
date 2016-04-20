@@ -4,11 +4,13 @@ const userInitialState = {
 
 export default (state = userInitialState, action) => {
   switch (action.type) {
-  case 'GET_USERS':
+  case 'GET_USERS': {
     const newState = Object.assign({}, state);
     newState.users = action.users;
     return newState;
-  default:
+  }
+  default: {
     return state;
+  }
   }
 };
