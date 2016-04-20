@@ -1,4 +1,4 @@
-import { Component, PropTypes } from 'react';
+import {Component, PropTypes} from 'react';
 
 export default class Checkbox extends Component {
   constructor(props) {

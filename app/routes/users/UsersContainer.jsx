@@ -1,15 +1,10 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import React, {Component} from 'react';
+import {connect} from 'react-redux';
 
 import Users from './Users';
-import { getUsers } from 'api/users';
+import {getUsers} from 'api/users';
 
 class UsersContainer extends Component {
-  constructor(props) {
-    super(props);
-
-    // this.state = { users: [] };
-  }
 
   componentWillMount() {
     getUsers();
@@ -25,17 +20,19 @@ class UsersContainer extends Component {
   render() {
     return (
       // <Users users={this.state.users} />
-      <Users {...this.props} />
+      <Users {...this.props}/>
     );
   }
 }
 
-const stateToProps = (state) => ({
+const stateToProps = state => ({
   users: state.userReducer.users
 });
 
 const dispatchToProps = () => ({
-  onClick: () => { console.log('user was click'); }
+  onClick: () => {
+    console.log('user was click');
+  }
 });
 
 export default connect(stateToProps, dispatchToProps)(UsersContainer);

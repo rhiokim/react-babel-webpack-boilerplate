@@ -1,5 +1,6 @@
 {
   "env": {
+    "browser": true,
     "node": true,
     "es6": true
   },
@@ -11,13 +12,17 @@
   "globals": {
   },
   "plugins": [
+    "react"
   ],
   "parser": "babel-eslint",
-  "extends": "eslint-config-airbnb",
+  "extends": ["xo", "xo-react"],
   "rules": {
     "comma-dangle": 0,
     "no-console": 0,
     "id-length": 0,
-    "react/prop-types": 0
+    "indent": [2, 2],
+    "react/prop-types": 0,
+    "react/jsx-indent": [2, 2],
+    "object-curly-spacing": [0, "never"],
   }
 }

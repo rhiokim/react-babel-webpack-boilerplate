@@ -1,6 +1,6 @@
 import React from 'react';
 import store from 'store';
-import { Button } from './ui';
+import {Button} from './ui';
 import Header from './Header';
 import Footer from './Footer';
 
@@ -23,7 +23,7 @@ export default class App extends React.Component {
   componentWillMount() {
     store.subscribe(() => {
       const currStore = store.getState();
-      this.setState({ totalUserCount: currStore.userReducer.users.length });
+      this.setState({totalUserCount: currStore.userReducer.users.length});
     });
   }
 
@@ -40,18 +40,18 @@ export default class App extends React.Component {
 
     return (
       <div>
-        <Header />
+        <Header/>
         <div>
           <h1>Appname: {props.name} <small>- version: {props.version}</small></h1>
           <div>Total User Count: {this.state.totalUserCount}</div>
-          <Button value="Button1" onClick={this.handleClick1} /> <Button value="Button2" onClick={this.handleClick2} />
+          <Button value="Button1" onClick={this.handleClick1}/> <Button value="Button2" onClick={this.handleClick2}/>
         </div>
 
         <div className="route">
           <h2> Route Area </h2>
           {this.props.children}
         </div>
-        <Footer />
+        <Footer/>
       </div>
     );
   }
