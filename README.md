@@ -15,11 +15,14 @@ This repo is a boilerplate for React-Babel-Webpack project. You could use it as 
 - ~~Support git hook `commit-msg` used to lint your [commit message](https://github.com/kentcdodds/validate-commit-msg)~~
 
 ```js
+  "scripts": {
+    "lint": "eslint 'app/**/*.@(js|jsx)'",
+  //  "lint:msg": "validate-commit-msg",
   ...
   "config": {
     "ghooks": {
       "pre-commit": "npm run lint",
-    //  "commit-msg": "npm run lint:msg"
+  //    "commit-msg": "npm run lint:msg"
     },
 ```
 
