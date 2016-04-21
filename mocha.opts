@@ -1,0 +1,2 @@
+app/**/__tests__/*-test.jsx
+--compilers js:babel-core/register
