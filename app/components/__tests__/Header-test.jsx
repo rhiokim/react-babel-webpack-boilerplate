@@ -1,10 +1,11 @@
 /* eslint-disable no-unused-vars */
 //ref, https://github.com/facebook/jest/tree/master/examples/react
-jest.unmock('../Header.jsx');
+// jest.unmock('../Header.jsx');
 
 import React from 'react';
 import ReactDOM from 'react-dom';
 import TestUtils, {renderIntoDocument} from 'react-addons-test-utils';
+import expect from 'expect';
 
 import Header from '../Header.jsx';
 
