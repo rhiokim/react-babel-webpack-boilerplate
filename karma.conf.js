@@ -31,7 +31,7 @@ module.exports = function (config) {
       'tests.bundle.js': [ 'webpack', 'sourcemap', 'coverage' ]
     },
 
-    reporters: [ 'progress', 'coverage', 'dots' ],
+    reporters: [ 'progress', 'jenkins', 'coverage', 'dots' ],
     coverageReporter: {
       dir: 'coverage/',
       reporters: [
@@ -39,6 +39,13 @@ module.exports = function (config) {
         { type: 'html', subdir: 'html' }
       ]
     },
+    
+    jenkinsReporter: {
+      outputFile: 'coverage/test-results.xml',
+      suite: '',                 // this will be mapped to the package 
+      classnameSuffix: 'browser-test'
+    },
+
     singleRun: true,
     // webpack config object
     webpack: webpackConfig,
