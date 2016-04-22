@@ -4,7 +4,7 @@
   "description": "react, babel, webpack, redux, react-router, unit test, eslint, material design",
   "main": "app/boostrap.jsx",
   "scripts": {
-    "lint": "eslint 'app/**/*.@(js|jsx)'",
+    "lint": "eslint --format=node_modules/eslint-formatter-pretty 'app/**/*.@(js|jsx)'",
     "lint:msg": "validate-commit-msg",
     "test": "mocha --opts mocha.opts -R spec",
     "test:watch": "mocha --opts mocha.opts --watch -R min",
@@ -47,13 +47,16 @@
     "eslint": "^2.8.0",
     "eslint-config-xo": "^0.13.0",
     "eslint-config-xo-react": "^0.7.0",
+    "eslint-formatter-pretty": "^0.2.0",
     "eslint-plugin-react": "^5.0.1",
     "expect": "^1.18.0",
     "expect-jsx": "^2.5.1",
     "file-loader": "^0.8.5",
     "ghooks": "^1.0.3",
+    "install": "^0.6.1",
     "jest-cli": "^11.0.2",
     "mocha": "^2.4.5",
+    "npm": "^3.8.7",
     "open-browser-webpack-plugin": "0.0.2",
     "react-addons-test-utils": "^15.0.1",
     "style-loader": "~0.13.0",
@@ -92,7 +95,9 @@
     }
   },
   "jest": {
-    "testFileExtensions": ["jsx"],
+    "testFileExtensions": [
+      "jsx"
+    ],
     "testPathDirs": [
       "<rootDir>/app"
     ],
