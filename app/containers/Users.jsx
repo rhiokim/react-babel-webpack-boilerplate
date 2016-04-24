@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 // import {connect} from 'react-redux';
 
-// import Users from './Users';
+// import Users from 'components/users/Users';
 
-class UsersContainer extends Component {
+class Users extends Component {
 
   componentWillMount() {
     // getUsers();
@@ -32,4 +32,4 @@ const dispatchToProps = () => ({
 export default connect(stateToProps, dispatchToProps)(UsersContainer);
 */
 
-export default UsersContainer;
+export default Users;

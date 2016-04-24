@@ -1,12 +1,9 @@
 import React from 'react';
-import store from 'store';
-import {Button} from './ui';
-import Header from './Header';
-import Footer from './Footer';
+import {Button} from 'components/ui';
+import Header from 'components/Header';
+import Footer from 'components/Footer';
 
 require('./App.css');
-require('./Header.css');
-require('./Footer.css');
 
 export default class App extends React.Component {
   constructor(props) {
@@ -21,10 +18,6 @@ export default class App extends React.Component {
   }
 
   componentWillMount() {
-    store.subscribe(() => {
-      const currStore = store.getState();
-      this.setState({totalUserCount: currStore.userReducer.users.length});
-    });
   }
 
   handleClick1() {

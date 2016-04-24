@@ -4,7 +4,7 @@
     "node": true,
     "es6": true
   },
-  ecmaFeatures: {
+  "ecmaFeatures": {
     "jsx": true,
     "modules": true,
     "destructuring": true
