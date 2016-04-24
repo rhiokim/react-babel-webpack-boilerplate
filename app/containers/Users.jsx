@@ -13,7 +13,7 @@ class Users extends Component {
     return (
       // <Users users={this.state.users} />
       // <Users {...this.props}/>
-      <div>users</div>
+      <h1>users</h1>
     );
   }
 }

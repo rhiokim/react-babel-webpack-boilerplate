@@ -38,7 +38,7 @@ If you want to enable `commit-msg` hook, remove `//`
 First, you should clone the repo and install the dependencies.
 
 ```bash
-$ git clone git@github.com:ruanyf/react-babel-webpack-boilerplate.git <yourAppName>
+$ git clone git@github.com:rhiokim/react-babel-webpack-boilerplate.git <yourAppName>
 $ cd <yourAppName>
 $ npm install
 ```
