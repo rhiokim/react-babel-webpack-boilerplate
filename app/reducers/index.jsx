@@ -1,10 +1,18 @@
-import {combineReducers} from 'redux';
-import {routerReducer as routing} from 'react-router-redux';
-import counter from './counter';
+import article from './article';
+import user from './user';
 
-const rootReducer = combineReducers({
-  counter,
-  routing
-});
+const defaultState = {
+  counter: 0
+};
 
-export default rootReducer;
+const reducers = (state = defaultState, action) => {
+  state = article(state, action);
+  state = user(state, action);
+
+  // global reducer
+  switch (action.type) {}
+
+  return state;
+};
+
+export default reducers;

@@ -1,35 +1,42 @@
 import React, {Component} from 'react';
-// import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
+import {connect} from 'react-redux';
 
-// import Users from 'components/users/Users';
+import * as UserActions from 'actions/user';
+import UserList from 'components/users/UserList';
 
 class Users extends Component {
+  constructor(props) {
+    super(props);
+
+    this.handleChange = this.handleChange.bind(this);
+  }
 
   componentWillMount() {
-    // getUsers();
+    this.props.fetchUsers();
+  }
+
+  componentDidMount() {
+  }
+
+  componentWillReceiveProps() {
+  }
+
+  handleChange() {
   }
 
   render() {
+    const {users} = this.props;
     return (
-      // <Users users={this.state.users} />
-      // <Users {...this.props}/>
-      <h1>users</h1>
+      <UserList users={users}/>
     );
   }
 }
 
-/*
-const stateToProps = state => ({
-  users: state.userReducer.users
-});
+const mapStateToProps = state => {
+  return {users: state.reducers.users};
+};
 
-const dispatchToProps = () => ({
-  onClick: () => {
-    console.log('user was click');
-  }
-});
+const mapDispatchToProps = dispatch => bindActionCreators(UserActions, dispatch);
 
-export default connect(stateToProps, dispatchToProps)(UsersContainer);
-*/
-
-export default Users;
+export default connect(mapStateToProps, mapDispatchToProps)(Users);

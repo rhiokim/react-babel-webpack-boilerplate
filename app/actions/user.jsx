@@ -1,5 +1,7 @@
-export const FETCH_USERS = 'FETCH_USERS';
+import axios from 'axios';
+
 export const REQUEST_USERS = 'REQUEST_USERS';
+export const RECEIVE_USERS = 'RECEIVE_USERS';
 
 export const requestUsers = () => {
   return {
@@ -7,6 +9,18 @@ export const requestUsers = () => {
   };
 };
 
-export const fetchUsers = () => {
+const receiveUsers = data => {
+  return {
+    type: RECEIVE_USERS,
+    users: data,
+    receivedAt: Date.now()
+  };
+};
 
+export const fetchUsers = () => {
+  return dispatch => {
+    dispatch(requestUsers());
+    return axios.get('http://jsonplaceholder.typicode.com/users')
+      .then(response => dispatch(receiveUsers(response.data)));
+  };
 };

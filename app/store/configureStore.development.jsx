@@ -1,10 +1,10 @@
-import {createStore, applyMiddleware, compose} from 'redux';
-import {persistState} from 'redux-devtools';
+import {createStore, applyMiddleware, combineReducers, compose} from 'redux';
 import thunk from 'redux-thunk';
-import createLogger from 'redux-logger';
 import {hashHistory} from 'react-router';
-import {routerMiddleware} from 'react-router-redux';
-import rootReducer from 'reducers';
+import {routerMiddleware, routerReducer as routing} from 'react-router-redux';
+import reducers from 'reducers';
+import {persistState} from 'redux-devtools';
+import createLogger from 'redux-logger';
 import DevTools from 'DevTools';
 
 const logger = createLogger({
@@ -13,6 +13,11 @@ const logger = createLogger({
 });
 
 const router = routerMiddleware(hashHistory);
+
+const rootReducer = combineReducers({
+  reducers,
+  routing,
+});
 
 const enhancer = compose(
   applyMiddleware(thunk, router, logger),

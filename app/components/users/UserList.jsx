@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 
-import UserItem from './components/UserItem';
+import UserItem from './UserItem';
 
-export default class Users extends Component {
+export default class UserList extends Component {
   render() {
     const {users} = this.props;
 
@@ -12,7 +12,7 @@ export default class Users extends Component {
         <ul>
           {users.map(user => {
             return (
-              <UserItem key={user.id} onClick={this.props.onClick} {...user}/>
+              <UserItem key={user.id} {...user}/>
             );
           })}
         </ul>

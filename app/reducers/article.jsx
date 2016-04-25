@@ -1,14 +1,14 @@
 export default (state, action) => {
   switch (action.type) {
-  case 'REQUEST_USERS':
+  case 'REQUEST_ARTICLES':
     state = Object.assign({}, state, {
       isFetching: true
     });
     break;
-  case 'RECEIVE_USERS':
+  case 'RECEIVE_ARTICLES':
     state = Object.assign({}, state, {
       isFetching: false,
-      users: action.users
+      articles: action.articles
     });
     break;
   default:

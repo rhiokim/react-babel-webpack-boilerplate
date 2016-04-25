@@ -1,10 +1,15 @@
-import {createStore, applyMiddleware} from 'redux';
+import {createStore, applyMiddleware, combineReducers} from 'redux';
 import thunk from 'redux-thunk';
 import {hashHistory} from 'react-router';
-import {routerMiddleware} from 'react-router-redux';
-import rootReducer from 'reducers';
+import {routerMiddleware, routerReducer} from 'react-router-redux';
+import reducers from 'reducers';
 
 const router = routerMiddleware(hashHistory);
+
+const rootReducer = combineReducers({
+  reducers,
+  routerReducer,
+});
 
 const enhancer = applyMiddleware(thunk, router);
 
