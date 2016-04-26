@@ -1,6 +1,12 @@
 var webpackConfig = require('./webpack.config');
 webpackConfig.devtool = 'inline-source-map';
 webpackConfig.plugins = [];
+webpackConfig.externals = {
+  'cheerio': 'window',
+  'react/addons': true,
+  'react/lib/ExecutionEnvironment': true,
+  'react/lib/ReactContext': true
+};
 
 module.exports = function (config) {
   config.set({
@@ -16,7 +22,7 @@ module.exports = function (config) {
     // - Safari (only Mac; has to be installed with `npm install karma-safari-launcher`)
     // - PhantomJS
     // - IE (only Windows; has to be installed with `npm install karma-ie-launcher`)
-    browsers: [ 'PhantomJS', 'Chrome' ],
+    browsers: ['PhantomJS', 'Chrome'],
 
     // karma only needs to know about the test bundle
     files: [
@@ -27,7 +33,7 @@ module.exports = function (config) {
     exclude: [
     ],
 
-    frameworks: [ 'mocha' ],
+    frameworks: ['mocha'],
     // plugins: [
     //   'karma-chrome-launcher',
     //   'karma-mocha',
@@ -36,12 +42,12 @@ module.exports = function (config) {
     // ],
     // run the bundle through the webpack and sourcemap plugins
     preprocessors: {
-      'tests.bundle.js': [ 'webpack', 'sourcemap', 'coverage' ]
+      'tests.bundle.js': ['webpack', 'sourcemap', 'coverage']
     },
 
     // test results reporter to use
     // possible values: 'dots', 'progress', 'junit', 'growl', 'coverage',
-    reporters: [ 'progress', 'jenkins', 'coverage', 'dots' ],
+    reporters: ['progress', 'jenkins', 'coverage', 'dots'],
 
     coverageReporter: {
       dir: 'coverage/',
@@ -50,10 +56,10 @@ module.exports = function (config) {
         { type: 'html', subdir: 'html' }
       ]
     },
-    
+
     jenkinsReporter: {
       outputFile: 'coverage/test-results.xml',
-      suite: '',                 // this will be mapped to the package 
+      suite: '',                 // this will be mapped to the package
       classnameSuffix: 'browser-test'
     },
 
