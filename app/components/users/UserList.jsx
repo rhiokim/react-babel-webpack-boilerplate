@@ -5,6 +5,7 @@ import UserItem from './UserItem';
 export default class UserList extends Component {
   render() {
     const {users} = this.props;
+    console.log(users);
 
     return (
       <div className="container">

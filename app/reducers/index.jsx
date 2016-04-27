@@ -2,7 +2,9 @@ import article from './article';
 import user from './user';
 
 const defaultState = {
-  counter: 0
+  counter: 0,
+  users: [],
+  articles: []
 };
 
 const reducers = (state = defaultState, action) => {
