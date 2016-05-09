@@ -2,7 +2,8 @@ import {createStore, applyMiddleware, combineReducers, compose} from 'redux';
 import thunk from 'redux-thunk';
 import {hashHistory} from 'react-router';
 import {routerMiddleware, routerReducer as routing} from 'react-router-redux';
-import reducers from 'reducers';
+import articleReducer from 'reducers/article';
+import userReducer from 'reducers/user';
 import {persistState} from 'redux-devtools';
 import createLogger from 'redux-logger';
 import DevTools from 'DevTools';
@@ -15,8 +16,9 @@ const logger = createLogger({
 const router = routerMiddleware(hashHistory);
 
 const rootReducer = combineReducers({
-  reducers,
-  routing,
+  articleReducer: articleReducer,
+  userReducer: userReducer,
+  routing: routing,
 });
 
 const enhancer = compose(

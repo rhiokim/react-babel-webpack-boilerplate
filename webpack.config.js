@@ -1,6 +1,7 @@
 var webpack = require('webpack');
 var path = require('path');
 var OpenBrowserPlugin = require('open-browser-webpack-plugin');
+var NpmInstallPlugin = require('npm-install-webpack-plugin');
 
 module.exports = {
   devServer: {
@@ -34,6 +35,7 @@ module.exports = {
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
+    new NpmInstallPlugin(),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': '"development"'
     }),

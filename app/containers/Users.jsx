@@ -34,7 +34,7 @@ class Users extends Component {
 }
 
 const mapStateToProps = state => {
-  return {users: state.reducers.users};
+  return {users: state.userReducer.users};
 };
 
 const mapDispatchToProps = dispatch => bindActionCreators(UserActions, dispatch);
