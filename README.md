@@ -80,7 +80,7 @@ $ npm test:karma
 
 ```bash
 $ npm run docker-build
-$ npm run dokcer-run
+$ npm run docker-run
 ```
 
 ## License
