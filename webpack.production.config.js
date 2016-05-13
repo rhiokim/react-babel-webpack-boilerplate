@@ -1,7 +1,7 @@
-var webpack = require('webpack');
-var path = require('path');
-var UglifyJsPlugin = webpack.optimize.UglifyJsPlugin;
-var CopyWebpackPlugin = require('copy-webpack-plugin');
+const webpack = require('webpack');
+const path = require('path');
+const UglifyJsPlugin = webpack.optimize.UglifyJsPlugin;
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   devtool: 'cheap-source-map',
