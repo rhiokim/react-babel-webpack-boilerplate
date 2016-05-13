@@ -8,6 +8,7 @@ webpackConfig.externals = {
   'react/lib/ReactContext': true
 };
 
+// Ref, sinon issue - https://github.com/airbnb/enzyme/issues/47#issuecomment-162529926
 module.exports = function (config) {
   config.set({
 
@@ -33,7 +34,7 @@ module.exports = function (config) {
     exclude: [
     ],
 
-    frameworks: ['mocha'],
+    frameworks: ['mocha', 'sinon'],
     // plugins: [
     //   'karma-chrome-launcher',
     //   'karma-mocha',
