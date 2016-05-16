@@ -77,6 +77,7 @@
     "open-browser-webpack-plugin": "0.0.2",
     "phantomjs-prebuilt": "^2.1.7",
     "react-addons-test-utils": "^15.0.2",
+    "react-mdl": "^1.5.4",
     "react-router-redux": "^4.0.4",
     "redux-devtools": "^3.3.1",
     "redux-devtools-dock-monitor": "^1.1.1",
@@ -99,7 +100,6 @@
   "license": "MIT",
   "config": {
     "ghooks": {
-      "pre-commit": "npm run lint"
     },
     "validate-commit-msg": {
       "types": [
