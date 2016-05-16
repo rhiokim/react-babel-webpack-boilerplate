@@ -33,9 +33,9 @@ class Articles extends Component {
   }
 }
 
-const mapStateToProps = state => {
-  return {articles: state.reducers.articles};
-};
+const mapStateToProps = state => ({
+  articles: state.articleReducer.articles
+});
 
 const mapDispatchToProps = dispatch => bindActionCreators(ArticleActions, dispatch);
 

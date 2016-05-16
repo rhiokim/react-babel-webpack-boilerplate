@@ -3,9 +3,7 @@
 // jest.unmock('../App.jsx');
 
 import React from 'react';
-import ReactDOM from 'react-dom';
-import TestUtils, {renderIntoDocument} from 'react-addons-test-utils';
-import { shallow } from 'enzyme';
+import {shallow} from 'enzyme';
 import expect from 'expect';
 import {Link} from 'react-router';
 

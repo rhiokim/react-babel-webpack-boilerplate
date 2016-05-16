@@ -2,12 +2,12 @@ This repo is a boilerplate for React-Babel-Webpack project. You could use it as 
 
 ## Features
 
-- Equip with React 15.0,1, ES6 & Babel 6
+- Equip with React 15.0.2, ES6 & Babel 6
 - Lint with ESlint and XO .eslintrc
   - eslint formatter pretty
 - Build with Webpack
 - Pre setup unit test environment for React.js
-  - Mocha, except
+  - Mocha, sinon, except
 - Karma test runner preset up with PhantomJS, Chrome
   - report coverage result for istanbul, jenkins
 - Support [hot module replacement](https://webpack.github.io/docs/hot-module-replacement.html)
@@ -15,6 +15,7 @@ This repo is a boilerplate for React-Babel-Webpack project. You could use it as 
 - Use [Commitizen](https://github.com/commitizen/cz-cli) to produce commit message according to [AngularJS convention](https://github.com/angular/angular.js/blob/master/CONTRIBUTING.md#-git-commit-guidelines)
 - Support git hook `pre-commit` used to lint and test your code
 - Use [conventional-changelog](https://github.com/ajoslin/conventional-changelog) to generate `CHANGELOG.md`
+- Why did you update, bruh? [why-did-you-update](https://github.com/garbles/why-did-you-update)
 
 ## Deprecated Features on this repo
 - ~~Support git hook `commit-msg` used to lint your [commit message](https://github.com/kentcdodds/validate-commit-msg)~~
@@ -79,7 +80,7 @@ $ npm test:karma
 
 ```bash
 $ npm run docker-build
-$ npm run dokcer-run
+$ npm run docker-run
 ```
 
 ## License

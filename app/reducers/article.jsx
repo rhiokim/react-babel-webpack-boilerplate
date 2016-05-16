@@ -1,4 +1,9 @@
-export default (state, action) => {
+const initial = {
+  isFetching: false,
+  articles: []
+};
+
+export default (state = initial, action) => {
   switch (action.type) {
   case 'REQUEST_ARTICLES':
     state = Object.assign({}, state, {
