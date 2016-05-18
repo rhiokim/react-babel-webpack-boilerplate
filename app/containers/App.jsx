@@ -16,16 +16,16 @@ export default class App extends React.Component {
   render() {
     return (
       <div>
-        <Header/>
+        <Header />
         <div className="route">
           {this.props.children}
         </div>
-        <Footer/>
+        <Footer />
         {
           (() => {
             if (process.env.NODE_ENV === 'development') {
               const DevTools = require('DevTools').default;
-              return <DevTools/>;
+              return <DevTools />;
             }
           })()
         }

@@ -13,7 +13,7 @@ export default class UserList extends Component {
         <ul>
           {users.map(user => {
             return (
-              <UserItem key={user.id} {...user}/>
+              <UserItem key={user.id} {...user} />
             );
           })}
         </ul>
