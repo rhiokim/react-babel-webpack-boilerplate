@@ -28,7 +28,7 @@ class Articles extends Component {
   render() {
     const {articles} = this.props;
     return (
-      <ArticleList articles={articles}/>
+      <ArticleList articles={articles} />
     );
   }
 }

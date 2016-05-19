@@ -8,8 +8,8 @@ import Articles from 'containers/Articles';
 
 export default (
   <Route path="/" component={App}>
-    <IndexRoute component={Home}/>
-    <Route path="/users" component={Users}/>
-    <Route path="/articles" component={Articles}/>
+    <IndexRoute component={Home} />
+    <Route path="/users" component={Users}i />
+    <Route path="/articles" component={Articles} />
   </Route>
 );

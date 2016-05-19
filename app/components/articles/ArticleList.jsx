@@ -17,7 +17,7 @@ export default class ArticleList extends Component {
         <ul>
           {articles.map(article => {
             return (
-              <Article key={article.id} {...article}/>
+              <Article key={article.id} {...article} />
             );
           })}
         </ul>
