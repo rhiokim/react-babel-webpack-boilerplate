@@ -56,7 +56,7 @@ export default class App extends Component {
           (() => {
             if (process.env.NODE_ENV !== 'development') {
               const DevTools = require('DevTools').default;
-              return <DevTools/>;
+              return <DevTools />;
             }
           })()
         }

@@ -35,7 +35,7 @@ module.exports = {
     root: path.resolve('./app'),
     extensions: ['', '.js', '.jsx'],
     alias: {
-      'sinon': 'sinon/pkg/sinon'
+      sinon: 'sinon/pkg/sinon'
     }
   },
   plugins: [
