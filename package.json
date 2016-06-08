@@ -79,6 +79,7 @@
     "phantomjs-prebuilt": "^2.1.7",
     "react-addons-test-utils": "^15.0.2",
     "react-router-redux": "^4.0.4",
+    "redbox-react": "^1.2.6",
     "redux-devtools": "^3.3.1",
     "redux-devtools-dock-monitor": "^1.1.1",
     "redux-devtools-log-monitor": "^1.0.11",
