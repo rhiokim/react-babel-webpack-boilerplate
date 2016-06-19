@@ -1,3 +1,4 @@
+/* global __DEV__ */
 import React, {Component} from 'react';
 import {Link} from 'react-router';
 
@@ -54,7 +55,7 @@ export default class App extends Component {
         </Content>
         {
           (() => {
-            if (process.env.NODE_ENV !== 'development') {
+            if (__DEV__) {
               const DevTools = require('DevTools').default;
               return <DevTools />;
             }

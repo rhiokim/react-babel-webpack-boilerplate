@@ -16,6 +16,7 @@ This repo is a boilerplate for React-Babel-Webpack project. You could use it as 
 - Support git hook `pre-commit` used to lint and test your code
 - Use [conventional-changelog](https://github.com/ajoslin/conventional-changelog) to generate `CHANGELOG.md`
 - Why did you update, bruh? [why-did-you-update](https://github.com/garbles/why-did-you-update)
+- Improve error catching [redbox-react](https://github.com/KeywordBrain/redbox-react)
 
 ## Deprecated Features on this repo
 - ~~Support git hook `commit-msg` used to lint your [commit message](https://github.com/kentcdodds/validate-commit-msg)~~

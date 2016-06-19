@@ -27,7 +27,11 @@ module.exports = {
   plugins: [
     new webpack.optimize.DedupePlugin(),
     new webpack.DefinePlugin({
-      'process.env.NODE_ENV': '"production"'
+      'process.env.NODE_ENV': '"production"',
+      __CLIENT__: true,
+      __SERVER__: false,
+      __DEV__: false,
+      __DEVTOOLS__: false
     }),
     new UglifyJsPlugin({
       compress: {
