@@ -1,0 +1,171 @@
+@import '~helpers';
+$footer-min-height: 220px;
+
+.justify-center {
+  @extend %justify-center;
+}
+
+.justify-between {
+  @extend %justify-between;
+}
+
+.justify-end {
+  @extend %auto-left;
+}
+
+.flex-around {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.middle-align {
+  align-items: center;
+  display: flex;
+}
+
+.doc-component-avatars {
+  .md-avatar {
+    flex-shrink: 0;
+  }
+
+  .middle-align {
+    padding-bottom: 1em;
+    padding-top: 1em;
+
+    > span {
+      padding-left: 2em;
+    }
+  }
+}
+
+.md-drawer-header {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.react-doc-footer {
+  background: $md-grey-900;
+  color: $md-white-base;
+  min-height: $footer-min-height;
+  padding: 2em;
+
+  .md-title {
+    color: inherit;
+  }
+
+  .container {
+    @extend %centered;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    > div {
+      padding-top: 2em;
+    }
+  }
+
+  .contact {
+    flex-shrink: 0;
+    padding-right: 2em;
+  }
+}
+
+.react-doc {
+  overflow-x: hidden;
+
+  > .md-card {
+    margin-bottom: 1em;
+    margin-top: 1em;
+  }
+}
+
+
+.example-code {
+  background: $md-background-color;
+  border-top: 1px solid $md-divider-color;
+}
+
+.md-navigation-drawer-content > .text-page {
+  background: $md-white-base;
+  display: flex;
+  justify-content: center;
+  padding: 2em 0;
+}
+
+.component-example {
+  width: calc(100% - 8px);
+
+  .md-card-text {
+    color: $md-text-color;
+  }
+}
+
+
+.speed-boost {
+  max-width: 280px;
+}
+
+.speed-boost-content {
+  max-height: 165px;
+}
+
+.doc-component-dividers .divider-example-container {
+  @include md-box-shadow(1);
+
+  margin: 1em auto;
+  max-width: 220px;
+}
+
+.small-container {
+  @extend %centered;
+
+  max-width: 260px;
+}
+
+.page-enter {
+  background: $md-white-base;
+  position: absolute;
+  transform: translate3d(0, 100%, 0);
+  z-index: 999;
+
+  &.page-enter-active {
+    transform: translate3d(0, 0, 0);
+    transition: transform .3s;
+  }
+}
+
+.page-leave {
+  opacity: 1;
+
+  &.page-leave-active {
+    opacity: 0;
+    transition: opacity .3s;
+  }
+}
+
+.padded {
+  padding-left: $md-default-padding;
+  padding-right: $md-default-padding;
+}
+
+.ink-item {
+  overflow: hidden;
+  position: relative;
+}
+
+.inline-rel-container {
+  display: inline-block;
+  position: relative;
+}
+
+.fr {
+  float: right;
+}
+
+.fl {
+  float: left;
+}
