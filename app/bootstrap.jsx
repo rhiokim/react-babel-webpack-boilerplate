@@ -1,7 +1,9 @@
 /* global __DEV__ */
+import 'assets/scss/index.scss';
+
 import React from 'react';
 import {render} from 'react-dom';
-import {Router, hashHistory} from 'react-router';
+import {Router, hashHistory, browserHistory} from 'react-router';
 import {Provider} from 'react-redux';
 import {syncHistoryWithStore} from 'react-router-redux';
 
@@ -9,7 +11,7 @@ import routes from 'routes';
 import configureStore from 'store/configureStore';
 
 const store = configureStore();
-const history = syncHistoryWithStore(hashHistory, store);
+const history = syncHistoryWithStore(browserHistory, store);
 
 const root = document.body.appendChild(document.createElement('div'));
 const App = () =>
