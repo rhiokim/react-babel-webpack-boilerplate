@@ -1,3 +1,4 @@
+/* global __DEV__ */
 import React from 'react';
 import Header from 'components/Header';
 import Footer from 'components/Footer';
@@ -23,7 +24,7 @@ export default class App extends React.Component {
         <Footer />
         {
           (() => {
-            if (process.env.NODE_ENV === 'development') {
+            if (__DEV__) {
               const DevTools = require('DevTools').default;
               return <DevTools />;
             }
