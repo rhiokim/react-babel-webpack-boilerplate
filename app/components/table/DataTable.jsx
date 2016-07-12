@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PureRenderMixin from 'react-addons-pure-render-mixin';
 import { DataTable, TableHeader, TableBody, TableRow, TableColumn } from 'react-md/lib/DataTables';
 import Divider from 'react-md/lib/Dividers';
+import { Card, CardMedia, CardTitle, CardActions } from 'react-md/lib/Cards';
 import loremIpsum from 'lorem-ipsum';
 
 export default class PlainTableExample extends Component {
@@ -41,6 +42,19 @@ export default class PlainTableExample extends Component {
             {rows}
           </TableBody>
         </DataTable>
+        <Card>
+          <DataTable plain>
+            <TableHeader>
+              <TableRow>
+                <TableColumn>Lorem 1</TableColumn>
+                <TableColumn>Lorem 2</TableColumn>
+              </TableRow>
+            </TableHeader>
+            <TableBody>
+              {rows}
+            </TableBody>
+          </DataTable>
+        </Card>
       </div>
     );
   }
