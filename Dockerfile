@@ -22,4 +22,4 @@ COPY build /usr/html/
 
 EXPOSE 80 443
 
-CMD ["/etc/services.d/nginx/run"]
+#CMD ["/etc/services.d/nginx/run"]

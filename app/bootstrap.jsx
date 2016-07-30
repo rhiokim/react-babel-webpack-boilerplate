@@ -1,26 +1,29 @@
+/* global __DEV__ */
 import React from 'react';
-import ReactDOM from 'react-dom';
-import { Router, Route, browserHistory, IndexRoute } from 'react-router';
-import { Provider } from 'react-redux';
-import store from 'store';
+import {render} from 'react-dom';
+import {Router, hashHistory} from 'react-router';
+import {Provider} from 'react-redux';
+import {syncHistoryWithStore} from 'react-router-redux';
 
-import App from 'components/App';
-import Index from 'routes/Index';
-import UsersContainer from 'routes/users/UsersContainer';
+import routes from 'routes';
+import configureStore from 'store/configureStore';
 
-const config = {
-  version: '0.0.1',
-  name: 'Hello World'
-};
+const store = configureStore();
+const history = syncHistoryWithStore(hashHistory, store);
 
-ReactDOM.render(
+const root = document.body.appendChild(document.createElement('div'));
+const App = () =>
   <Provider store={store}>
-    <Router history={browserHistory}>
-      <Route path="/" component={App} {...config}>
-        <IndexRoute component={Index} />
-        <Route path="/users" component={UsersContainer} />
-      </Route>
-    </Router>
-  </Provider>,
-  document.body.appendChild(document.createElement('div'))
-);
+    <Router history={history} routes={routes} />
+  </Provider>;
+
+if (__DEV__) {
+  const RedBox = require('redbox-react');
+  try {
+    render(<App />, root);
+  } catch (e) {
+    render(<RedBox error={e} />, root);
+  }
+} else {
+  render(<App />, root);
+}

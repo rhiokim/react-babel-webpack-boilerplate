@@ -1,7 +1,7 @@
-var webpack = require('webpack');
-var path = require('path');
-var uglifyJsPlugin = webpack.optimize.UglifyJsPlugin;
-var CopyWebpackPlugin = require('copy-webpack-plugin');
+const webpack = require('webpack');
+const path = require('path');
+const UglifyJsPlugin = webpack.optimize.UglifyJsPlugin;
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   devtool: 'cheap-source-map',
@@ -9,15 +9,15 @@ module.exports = {
     path.resolve(__dirname, 'app/bootstrap.jsx'),
   ],
   output: {
-    path: __dirname + '/build',
+    path: path.resolve(__dirname, 'build'),
     publicPath: '/',
     filename: './js/bundle.js'
   },
   module: {
-    loaders:[
+    loaders: [
       { test: /\.css$/, include: path.resolve(__dirname, 'app'), loader: 'style-loader!css-loader' },
       { test: /.(png|jpg|gif|woff(2)?|eot|ttf|svg)(\?[a-z0-9=\.]+)?$/, include: path.resolve(__dirname, 'app'), loader: 'url-loader?limit=100000' },
-      { test: /\.js[x]?$/, include: path.resolve(__dirname, 'app'), exclude: /node_modules/, loader: 'babel-loader' },
+      { test: /\.jsx?$/, include: path.resolve(__dirname, 'app'), exclude: /node_modules/, loader: 'babel-loader' },
     ]
   },
   resolve: {
@@ -27,16 +27,19 @@ module.exports = {
   plugins: [
     new webpack.optimize.DedupePlugin(),
     new webpack.DefinePlugin({
-      'process.env.NODE_ENV': '"production"'
+      'process.env.NODE_ENV': '"production"',
+      __CLIENT__: true,
+      __SERVER__: false,
+      __DEV__: false,
+      __DEVTOOLS__: false
     }),
-    new uglifyJsPlugin({
+    new UglifyJsPlugin({
       compress: {
         warnings: false
       }
     }),
     new CopyWebpackPlugin([
-      { from: './app/index.html', to: 'index.html' },
-      { from: './app/assets', to: './assets' }
+      { from: './app/index.html', to: 'index.html' }
     ]),
   ]
 };

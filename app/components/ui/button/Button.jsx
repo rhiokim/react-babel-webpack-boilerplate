@@ -1,5 +1,5 @@
 // ref - https://github.com/react-component/checkbox/blob/master/src/Checkbox.jsx
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 
 export default class Header extends Component {
   constructor(props) {
